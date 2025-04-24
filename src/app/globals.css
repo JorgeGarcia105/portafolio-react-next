@@ -175,6 +175,8 @@ a:hover {
 .card:hover {
   background-color: var(--color-accent);
   color: var(--color-background);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ============================
@@ -198,4 +200,42 @@ a:hover {
 =============================== */
 .backface-hidden {
   backface-visibility: hidden;
+}
+
+/* ============================
+   Animaciones y transiciones
+=============================== */
+motion.h2 {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+motion.div {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fa-code, .fa-brain, .fa-book-open {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.fa-code:hover, .fa-brain:hover, .fa-book-open:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================
+   Fondo con gradiente
+=============================== */
+body {
+  background: linear-gradient(to bottom right, var(--background-light), var(--background-dark));
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ============================
+   Elementos hover
+=============================== */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }

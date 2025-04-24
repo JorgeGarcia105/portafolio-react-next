@@ -9,56 +9,61 @@ export default function About() {
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-center text-zinc-900 dark:text-white mb-12"
+        transition={{ duration: 0.8 }}
+        className="text-4xl font-semibold text-center text-zinc-900 dark:text-white mb-12"
       >
         👨‍💻 About Me
       </motion.h2>
 
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 text-zinc-700 dark:text-zinc-300">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 text-zinc-700 dark:text-zinc-300">
+        {/* Texto sobre mí */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
           <p className="text-lg mb-6 leading-relaxed">
-            Hello! I'm <strong>Jorge Iván García Torres</strong>, a Backend Developer and Systems Engineering student passionate about technology, systems design, and continuous growth.
+            Hi! I'm <strong>Jorge Iván García Torres</strong>, a passionate Backend Developer and Systems Engineering student. I’m always eager to learn and grow in the world of technology.
           </p>
           <p className="text-lg mb-6 leading-relaxed">
-            My focus is on building robust, efficient, and scalable systems using technologies such as <strong>Java, Spring Boot, Python</strong>, and modern databases.
+            My expertise lies in building scalable and efficient systems using <strong>Java, Spring Boot, Python</strong>, and cutting-edge databases.
           </p>
           <p className="text-lg leading-relaxed">
-            I believe in clean code, agile teamwork, and lifelong learning to deliver impactful software solutions.
+            I value clean code, agile methodologies, and continuously improving my craft to create impactful software.
           </p>
         </motion.div>
 
+        {/* Iconos y habilidades */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col gap-6"
+          transition={{ duration: 0.8 }}
+          className="flex flex-col gap-8"
         >
-          <div className="flex items-start gap-4">
-            <FaCode className="text-3xl text-blue-600 dark:text-blue-400" />
+          {/* Habilidad 1 */}
+          <div className="flex items-start gap-4 hover:scale-105 transition-all duration-300">
+            <FaCode className="text-4xl text-blue-600 dark:text-blue-400" />
             <div>
               <h3 className="text-xl font-semibold">Clean Code & Architecture</h3>
-              <p className="text-base">I build systems focused on modularity, performance, and scalability.</p>
+              <p className="text-base">I prioritize modularity, performance, and scalability in all my systems.</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
-            <FaBrain className="text-3xl text-purple-600 dark:text-purple-400" />
+          {/* Habilidad 2 */}
+          <div className="flex items-start gap-4 hover:scale-105 transition-all duration-300">
+            <FaBrain className="text-4xl text-purple-600 dark:text-purple-400" />
             <div>
               <h3 className="text-xl font-semibold">Problem Solving</h3>
-              <p className="text-base">Solving complex problems with efficient algorithms and thoughtful design.</p>
+              <p className="text-base">I excel at tackling complex problems with efficient algorithms and elegant design.</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
-            <FaBookOpen className="text-3xl text-green-600 dark:text-green-400" />
+          {/* Habilidad 3 */}
+          <div className="flex items-start gap-4 hover:scale-105 transition-all duration-300">
+            <FaBookOpen className="text-4xl text-green-600 dark:text-green-400" />
             <div>
               <h3 className="text-xl font-semibold">Lifelong Learning</h3>
-              <p className="text-base">Constantly learning new technologies and contributing to open-source projects.</p>
+              <p className="text-base">I am always expanding my knowledge of new technologies and contributing to open-source projects.</p>
             </div>
           </div>
         </motion.div>

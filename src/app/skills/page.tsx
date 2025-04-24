@@ -1,6 +1,6 @@
 "use client";
 
-import { FaJava, FaPython, FaDocker, FaAws } from "react-icons/fa"; // Instala react-icons si no lo tienes
+import { FaJava, FaJs, FaPython, FaAws } from "react-icons/fa"; // React Icons
 
 export default function Skills() {
   return (
@@ -14,12 +14,12 @@ export default function Skills() {
           <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Java</h3>
         </div>
         <div className="flex flex-col items-center">
-          <FaPython className="text-5xl text-yellow-500 dark:text-yellow-400 mb-4" />
-          <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Python</h3>
+          <FaJs className="text-5xl text-yellow-500 dark:text-yellow-400 mb-4" />
+          <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">JavaScript</h3>
         </div>
         <div className="flex flex-col items-center">
-          <FaDocker className="text-5xl text-teal-500 dark:text-teal-400 mb-4" />
-          <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Docker</h3>
+          <FaPython className="text-5xl text-yellow-500 dark:text-yellow-400 mb-4" />
+          <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">Python</h3>
         </div>
         <div className="flex flex-col items-center">
           <FaAws className="text-5xl text-orange-500 dark:text-orange-400 mb-4" />

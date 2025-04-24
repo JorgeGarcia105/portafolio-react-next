@@ -4,13 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Download, Mail, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-20 px-6 lg:px-24 bg-zinc-50 dark:bg-zinc-900">
       
-      {/* Sección de texto principal */}
+      {/* Texto principal */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +44,7 @@ export default function Hero() {
             variant="outline"
             className="gap-2 text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
           >
-            <a href="mailto:jorgarciatorres@outlook.com" aria-label="Contact Jorge via email">
+            <a href="mailto:garciatorresjorgeivan10@gmail.com" aria-label="Contact Jorge via email">
               <Mail className="w-5 h-5" />
               Contact Me
             </a>
@@ -53,7 +52,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Flip card interactiva con certificado */}
+      {/* Flip card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -63,10 +62,10 @@ export default function Hero() {
       >
         <div className="relative w-full h-full transform-style-preserve-3d transition-transform duration-700 hover:rotate-y-180">
           
-          {/* Cara frontal: avatar o certificado */}
+          {/* Cara frontal */}
           <div className="absolute w-full h-full backface-hidden rounded-2xl shadow-xl overflow-hidden border-2 border-blue-200 dark:border-blue-800">
             <Image
-              src="/images/avatar.png"
+              src="/images/avatar2.png"
               alt="Avatar or certificate preview"
               fill
               className="object-cover"
@@ -74,7 +73,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* Cara trasera: información del certificado */}
+          {/* Cara trasera */}
           <div className="absolute w-full h-full rotate-y-180 backface-hidden bg-white dark:bg-zinc-800 rounded-2xl p-6 flex flex-col justify-between border-2 border-blue-200 dark:border-blue-800 shadow-xl">
             <div>
               <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400">
