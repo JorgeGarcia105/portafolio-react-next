@@ -90,7 +90,7 @@ const skills = [
   }
 ];
 
-const SkillCard = ({ skill, index }) => (
+const SkillCard = ({ skill, index }: { skill: typeof skills[number]; index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
