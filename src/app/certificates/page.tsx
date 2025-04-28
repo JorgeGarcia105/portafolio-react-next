@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -129,8 +130,9 @@ export default function Certificates() {
   return (
     <section className="py-12 px-6 lg:px-16 bg-zinc-50 dark:bg-zinc-900">
       <h2 className="text-3xl font-bold text-center mb-12 text-zinc-900 dark:text-zinc-100">
-        Certificates
+        🎓 Certificates
       </h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {certificates.map((cert, index) => (
           <motion.div
@@ -139,31 +141,34 @@ export default function Certificates() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.05 }}
-            whileHover={{ scale: 1.03 }}
-            className="perspective"
+            className="relative perspective group"
           >
-            <div className="relative w-full aspect-[4/3] transition-transform duration-700 transform-style preserve-3d hover:rotate-y-180">
-              {/* Front */}
-              <div className="absolute w-full h-full backface-hidden rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-zinc-800">
+            {/* Flip Card */}
+            <motion.div
+              className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-white dark:bg-zinc-800 transform-style preserve-3d transition-transform duration-700 group-hover:rotate-y-180"
+            >
+              {/* Front Face */}
+              <div className="absolute w-full h-full backface-hidden">
                 <Image
                   src={cert.imageUrl}
-                  alt={cert.title}
+                  alt={`Certificado de ${cert.title}`}
                   fill
-                  className="object-contain p-2"
+                  className="object-contain p-4"
                 />
               </div>
-              {/* Back */}
-              <div className="absolute w-full h-full rotate-y-180 backface-hidden rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-zinc-800">
-                <div className="relative w-full h-2/3 bg-zinc-100 dark:bg-zinc-700">
+
+              {/* Back Face */}
+              <div className="absolute w-full h-full rotate-y-180 backface-hidden flex flex-col rounded-2xl bg-white dark:bg-zinc-800">
+                <div className="relative flex-1 bg-zinc-100 dark:bg-zinc-700">
                   <Image
                     src={cert.imageRes || cert.imageUrl}
-                    alt={cert.title + " detalles"}
+                    alt={`Detalles de ${cert.title}`}
                     fill
-                    className="object-contain p-2"
+                    className="object-contain p-4"
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">
+                  <h3 className="text-lg font-bold text-zinc-800 dark:text-zinc-100">
                     {cert.title}
                   </h3>
                   <p className="text-sm text-zinc-600 dark:text-zinc-400">
@@ -171,14 +176,14 @@ export default function Certificates() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
 
       <style jsx>{`
         .perspective {
-          perspective: 1200px;
+          perspective: 1000px;
         }
         .transform-style {
           transform-style: preserve-3d;
@@ -189,7 +194,7 @@ export default function Certificates() {
         .rotate-y-180 {
           transform: rotateY(180deg);
         }
-        .hover\\:rotate-y-180:hover {
+        .group-hover\\:rotate-y-180:hover {
           transform: rotateY(180deg);
         }
       `}</style>
