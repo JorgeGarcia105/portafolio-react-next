@@ -69,38 +69,43 @@ export default function TourWrapper({ children }: { children: React.ReactNode })
 
 	const accentColor = theme === "dark" ? "#60a5fa" : "#4F46E5";
 
+	// Estado requerido por Reactour
+	const [disabledActions, setDisabledActions] = useState(false);
+
 	return (
 		<TourProvider steps={filteredSteps}>
 			{mounted && (
 				<Tour
-          isOpen={isOpen}
-          currentStep={currentStep}
-          setIsOpen={setIsOpen}
-          setCurrentStep={setCurrentStep}
-          className="tour-wrapper"
-          styles={{
-            popover: () => ({
-              backgroundColor: theme === "dark" ? "#18181b" : "#fff",
-              color: theme === "dark" ? "#fff" : "#18181b",
-              border: theme === "dark" ? "1px solid #27272a" : "1px solid #e5e7eb",
-              boxShadow: theme === "dark"
-                ? "0 4px 32px 0 rgba(0,0,0,0.8)"
-                : "0 4px 32px 0 rgba(0,0,0,0.15)",
-              borderRadius: 12,
-              padding: 24,
-              minWidth: 320,
-              maxWidth: 400,
-            }),
-            controls: () => ({
-              color: accentColor,
-            }),
-            badge: () => ({
-              backgroundColor: accentColor,
-              color: "#fff",
-            }),
-          }} steps={[]} disabledActions={false} setDisabledActions={function (value: SetStateAction<boolean>): void {
-            throw new Error("Function not implemented.");
-          } }				/>
+					steps={filteredSteps}
+					isOpen={isOpen}
+					currentStep={currentStep}
+					setIsOpen={setIsOpen}
+					setCurrentStep={setCurrentStep}
+					disabledActions={disabledActions}
+					setDisabledActions={setDisabledActions}
+					className="tour-wrapper"
+					styles={{
+						popover: () => ({
+							backgroundColor: theme === "dark" ? "#18181b" : "#fff",
+							color: theme === "dark" ? "#fff" : "#18181b",
+							border: theme === "dark" ? "1px solid #27272a" : "1px solid #e5e7eb",
+							boxShadow: theme === "dark"
+								? "0 4px 32px 0 rgba(0,0,0,0.8)"
+								: "0 4px 32px 0 rgba(0,0,0,0.15)",
+							borderRadius: 12,
+							padding: 24,
+							minWidth: 320,
+							maxWidth: 400,
+						}),
+						controls: () => ({
+							color: accentColor,
+						}),
+						badge: () => ({
+							backgroundColor: accentColor,
+							color: "#fff",
+						}),
+					}}
+				/>
 			)}
 			{children}
 		</TourProvider>
