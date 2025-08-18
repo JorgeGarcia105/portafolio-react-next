@@ -81,8 +81,8 @@ export default function TourWrapper({ children }: { children: React.ReactNode })
 					currentStep={currentStep}
 					setIsOpen={setIsOpen}
 					setCurrentStep={setCurrentStep}
-					disabledActions={disabledActions}
-					setDisabledActions={setDisabledActions}
+					disabledActions={false}
+					setDisabledActions={() => {}} // función vacía para ignorar cambios
 					className="tour-wrapper"
 					styles={{
 						popover: () => ({
@@ -105,6 +105,7 @@ export default function TourWrapper({ children }: { children: React.ReactNode })
 							color: "#fff",
 						}),
 					}}
+					disableInteraction={false}
 				/>
 			)}
 			{children}
