@@ -94,9 +94,6 @@ export default function TourWrapper({ children }: { children: React.ReactNode })
           accentColor={accentColor}
           className="tour-wrapper"
           styles={{
-            mask: () => ({
-              backgroundColor: maskColor,
-            }),
             popover: () => ({
               backgroundColor: theme === "dark" ? "#18181b" : "#fff",
               color: theme === "dark" ? "#fff" : "#18181b",
