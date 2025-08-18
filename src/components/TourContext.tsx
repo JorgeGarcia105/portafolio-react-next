@@ -1,17 +1,17 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, Dispatch, SetStateAction } from "react";
 
 type TourContextType = {
   isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
   currentStep: number;
-  setCurrentStep: (step: number) => void;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
 };
 
 const TourContext = createContext<TourContextType | undefined>(undefined);
 
 export function TourContextProvider({ children }: { children: React.ReactNode }) {
-  const [isOpen, setIsOpen] = useState(false); // <-- Debe iniciar en false
+  const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
 
   return (
