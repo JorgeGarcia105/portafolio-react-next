@@ -96,8 +96,10 @@ export default function TourWrapper({ children }: { children: React.ReactNode })
           styles={{
             mask: { backgroundColor: maskColor },
             popover: {
-              backgroundColor: theme === "dark" ? "#18181b" : "#fff",
-              color: theme === "dark" ? "#fff" : "#18181b",
+              ...( {
+                backgroundColor: theme === "dark" ? "#18181b" : "#fff",
+                color: theme === "dark" ? "#fff" : "#18181b",
+              } as React.CSSProperties ),
             },
             // Puedes agregar más estilos aquí si lo deseas
           }}
