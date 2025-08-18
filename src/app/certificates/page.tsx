@@ -129,7 +129,7 @@ const certificates = [
 export default function Certificates() {
 	return (
 		<section
-			className="py-12 px-6 lg:px-16 bg-zinc-50 dark:bg-zinc-900"
+			className="certificates-section py-12 px-6 lg:px-16 bg-zinc-50 dark:bg-zinc-900"
 			aria-labelledby="certificates-heading"
 		>
 			<h2

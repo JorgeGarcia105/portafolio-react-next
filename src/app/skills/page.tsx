@@ -156,7 +156,7 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ delay: index * 0.1 }}
     viewport={{ once: true }}
-    className="group flex flex-col items-center p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700"
+    className="skills-sectiongroup flex flex-col items-center p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700"
     role="listitem"
   >
     <div className={`${skill.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -198,7 +198,7 @@ export default function Skills() {
   return (
     <section 
       id="skills" 
-      className="py-20 px-6 lg:px-16 bg-zinc-50 dark:bg-zinc-900"
+      className="skills-section py-20 px-6 lg:px-16 bg-zinc-50 dark:bg-zinc-900"
       aria-labelledby="skills-heading"
     >
       <div className="max-w-6xl mx-auto">

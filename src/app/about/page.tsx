@@ -6,9 +6,9 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section
+    <section 
       id="about"
-      className="py-20 px-6 lg:px-24 bg-zinc-50 dark:bg-zinc-900"
+      className="about-section py-20 px-6 lg:px-24 bg-zinc-50 dark:bg-zinc-900"
       aria-labelledby="about-heading"
     >
       <motion.h2

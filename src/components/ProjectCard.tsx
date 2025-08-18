@@ -8,6 +8,7 @@ interface ProjectCardProps {
   url: string;
   imageUrl: string;
   technologies: string[];
+  className?: string;
 }
 
 export default function ProjectCard({
@@ -16,11 +17,14 @@ export default function ProjectCard({
   url,
   imageUrl,
   technologies,
+  className = "",
 }: ProjectCardProps) {
   const isGithubLink = url.includes("github.com");
 
   return (
-    <article className="group h-full rounded-xl overflow-hidden bg-white dark:bg-zinc-800 shadow-lg hover:shadow-2xl dark:hover:shadow-zinc-700/50 transition-all duration-300 hover:-translate-y-2 border border-zinc-200 dark:border-zinc-700">
+    <article
+      className={`group h-full rounded-xl overflow-hidden bg-white dark:bg-zinc-800 shadow-lg hover:shadow-2xl dark:hover:shadow-zinc-700/50 transition-all duration-300 hover:-translate-y-2 border border-zinc-200 dark:border-zinc-700 ${className}`}
+    >
       {/* Project Image with overlay */}
       <div className="relative aspect-video overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
