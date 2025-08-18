@@ -1,15 +1,16 @@
 "use client";
+
 import { TourProvider, Tour } from "@reactour/tour";
 import { usePathname } from "next/navigation";
 import { useTourContext } from "./TourContext";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes"; // Importa el hook de tema
+import { SetStateAction, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const steps = [
   {
     selector: "nav",
     content: "Use this navigation bar to explore the main sections of my portfolio.",
-    route: "all", // Cambia la ruta a "all" para identificarlo como global
+    route: "all",
   },
   {
     selector: ".hero-section",
@@ -56,25 +57,18 @@ const steps = [
 export default function TourWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { isOpen, setIsOpen, currentStep, setCurrentStep } = useTourContext();
-  const { theme } = useTheme(); // Obtiene el tema actual
+  const { theme } = useTheme();
 
-  // Siempre incluye el paso de la barra de navegación + los pasos de la ruta actual
+  // Siempre incluye nav + pasos de la ruta actual
   const filteredSteps = [
     steps[0],
     ...steps.filter((step, idx) => step.route === pathname && idx !== 0),
   ];
 
-  // Solo renderiza <Tour /> en el cliente
   const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
-  // Define colores según el tema
-  const accentColor = theme === "dark" ? "#60a5fa" : "#4F46E5"; // azul claro para dark, azul fuerte para light
-  const maskColor = theme === "dark"
-    ? "rgba(24, 24, 27, 0.85)" // fondo oscuro para dark
-    : "rgba(0, 0, 0, 0.5)";    // fondo oscuro para light
+  const accentColor = theme === "dark" ? "#60a5fa" : "#4F46E5";
 
   return (
     <TourProvider steps={filteredSteps}>
@@ -82,24 +76,28 @@ export default function TourWrapper({ children }: { children: React.ReactNode })
         <Tour
           steps={filteredSteps}
           isOpen={isOpen}
-          step={currentStep}
-          setStep={setCurrentStep}
-          onRequestClose={() => setIsOpen(false)}
-          onStepChange={(step: number) => setCurrentStep(step)}
+          currentStep={currentStep}
+          setIsOpen={(value) => setIsOpen(typeof value === "function" ? value(isOpen) : value)}
+          setCurrentStep={(value) => setCurrentStep(typeof value === "function" ? value(currentStep) : value)}
           disableDotsNavigation
           disableKeyboardNavigation
           disableFocusLock
           disableInteraction
-          closeWithMask={false}
-          accentColor={accentColor}
           className="tour-wrapper"
           styles={{
             popover: () => ({
               backgroundColor: theme === "dark" ? "#18181b" : "#fff",
               color: theme === "dark" ? "#fff" : "#18181b",
             }),
-          }}
-        />
+            controls: () => ({
+              color: accentColor,
+            }),
+            badge: () => ({
+              backgroundColor: accentColor,
+            }),
+          }} disabledActions={false} setDisabledActions={function (value: SetStateAction<boolean>): void {
+            throw new Error("Function not implemented.");
+          } }        />
       )}
       {children}
     </TourProvider>
