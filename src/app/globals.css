@@ -211,9 +211,7 @@ body {
   width: 80%;
 }
 
-.tour-wrapper,
 .reactour__popover {
-  z-index: 99999 !important;
-  background: inherit !important;
-  color: inherit !important;
+  background: #18181b !important;
+  color: #fff !important;
 }

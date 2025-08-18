@@ -61,11 +61,13 @@ export default function TourWrapper({ children }: { children: React.ReactNode })
 
 	const filteredSteps = [
 		steps[0],
-		...steps.filter((step, idx) => step.route === pathname && idx !== 0),
+		...steps.filter((step, idx) =>
+			step.route === pathname && idx !== 0
+		),
 	];
 
 	const [mounted, setMounted] = useState(false);
-	useEffect(() => setMounted(true), []);
+	useEffect(() => setMounted(false), []);
 
 	const accentColor = theme === "dark" ? "#60a5fa" : "#4F46E5";
 
