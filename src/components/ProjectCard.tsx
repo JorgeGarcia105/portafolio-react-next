@@ -23,7 +23,10 @@ export default function ProjectCard({
 
   return (
     <article
-      className={`group h-full rounded-xl overflow-hidden bg-white dark:bg-zinc-800 shadow-lg hover:shadow-2xl dark:hover:shadow-zinc-700/50 transition-all duration-300 hover:-translate-y-2 border border-zinc-200 dark:border-zinc-700 ${className}`}
+      className={`group relative h-full rounded-xl overflow-hidden bg-white dark:bg-zinc-800 shadow-lg hover:shadow-2xl dark:hover:shadow-zinc-700/50 transition-all duration-300 hover:-translate-y-2 border border-zinc-200 dark:border-zinc-700 ${className}`}
+      tabIndex={0}
+      role="article"
+      aria-label={`Proyecto: ${title}`}
     >
       {/* Project Image with overlay */}
       <div className="relative aspect-video overflow-hidden">
@@ -49,12 +52,12 @@ export default function ProjectCard({
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority={false}
           placeholder="blur"
-          blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PC9zdmc+"
+          blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PC9zdmc+"
         />
       </div>
 
       {/* Project Content */}
-      <div className="p-6 space-y-4">
+  <div className="p-6 space-y-4">
         <div>
           <h3 className="text-xl font-bold text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">
             {title}
@@ -80,27 +83,36 @@ export default function ProjectCard({
             ))}
           </ul>
         </div>
+        {/* Call to action: footer area */}
+        <div className="mt-4 flex items-center justify-between">
+          <div className="flex-1">
+            <Link
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-800 rounded"
+              aria-label={`Ver proyecto ${title} (se abre en nueva pestaña)`}
+            >
+              {isGithubLink ? (
+                <>
+                  <Github className="w-4 h-4" />
+                  Ver en GitHub
+                </>
+              ) : (
+                <>
+                  <ExternalLink className="w-4 h-4" />
+                  Ver proyecto
+                </>
+              )}
+            </Link>
+          </div>
 
-        {/* Call to action */}
-        <Link
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-800 rounded"
-          aria-label={`Ver proyecto ${title} (se abre en nueva pestaña)`}
-        >
-          {isGithubLink ? (
-            <>
-              <Github className="w-4 h-4" />
-              Ver en GitHub
-            </>
-          ) : (
-            <>
-              <ExternalLink className="w-4 h-4" />
-              Ver proyecto
-            </>
-          )}
-        </Link>
+          <div className="ml-3 flex items-center gap-2">
+            {technologies.slice(0, 2).map((tech) => (
+              <span key={tech} className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-xs bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-200">{tech}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </article>
   );

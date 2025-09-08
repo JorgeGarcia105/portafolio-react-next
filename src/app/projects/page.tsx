@@ -135,13 +135,19 @@ function ProjectsContent({ projects }: { projects: Project[] }) {
 				className="p-6 bg-zinc-50 dark:bg-zinc-900 min-h-screen"
 				aria-labelledby="projects-heading"
 			>
-				<h1
-					id="projects-heading"
-					className="text-3xl font-bold mb-6 text-center text-zinc-900 dark:text-zinc-100"
-				>
-					My Projects
-				</h1>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="container mx-auto">
+					<h1
+						id="projects-heading"
+						className="text-3xl font-bold mb-3 text-center text-zinc-900 dark:text-zinc-100 prose"
+					>
+						My Projects
+					</h1>
+
+					<div className="flex justify-center mb-6">
+						<button className="px-3 py-1 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded shadow-sm">All Projects</button>
+					</div>
+
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 					{projects.map((project, index) => (
 						<ProjectCard
 							key={index}
@@ -153,6 +159,7 @@ function ProjectsContent({ projects }: { projects: Project[] }) {
 							className="ProjectCard" // Asegúrate de que ProjectCard acepte className
 						/>
 					))}
+				</div>
 				</div>
 			</section>
 		</>

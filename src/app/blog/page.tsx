@@ -1,8 +1,8 @@
 "use client";
 
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
-import { useState } from "react";
+import { BookOpen, Search } from "lucide-react";
 
 const posts = [
 	{
@@ -35,10 +35,25 @@ const allTags = Array.from(
 
 export default function Blog() {
 	const [selectedTag, setSelectedTag] = useState<string | null>(null);
+	const [query, setQuery] = useState("");
+	const [debounced, setDebounced] = useState("");
 
-	const filteredPosts = selectedTag
-		? posts.filter((post) => post.tags.includes(selectedTag))
-		: posts;
+	useEffect(() => {
+		const id = setTimeout(() => setDebounced(query.trim()), 300);
+		return () => clearTimeout(id);
+	}, [query]);
+
+	const filteredPosts = useMemo(
+		() =>
+			selectedTag
+				? posts.filter((post) => post.tags.includes(selectedTag))
+				: posts.filter(
+						(p) =>
+							p.title.toLowerCase().includes(debounced.toLowerCase()) ||
+							p.tags.some((t) => t.toLowerCase().includes(debounced.toLowerCase()))
+				  ),
+		[selectedTag, debounced]
+	);
 
 	return (
 		<section className="blog-section max-w-3xl mx-auto py-12 px-4 sm:px-8">
@@ -48,6 +63,24 @@ export default function Blog() {
 			<p className="mb-8 text-zinc-600 dark:text-zinc-400 text-lg">
 				Welcome to my blog! Here I share tutorials, tips, and experiences about backend development, databases, and software engineering.
 			</p>
+
+			{/* Search input */}
+			<div className="mb-8">
+				<label htmlFor="search" className="sr-only">
+					Search posts
+				</label>
+				<div className="relative">
+					<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400" />
+					<input
+						id="search"
+						type="text"
+						placeholder="Search posts..."
+						value={query}
+						onChange={(e) => setQuery(e.target.value)}
+						className="w-full pr-3 pl-10 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+					/>
+				</div>
+			</div>
 
 			{/* Categorías visuales */}
 			<div className="flex flex-wrap gap-2 mb-10">

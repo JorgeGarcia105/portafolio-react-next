@@ -10,13 +10,14 @@ export default function Hero() {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <section className="hero-section relative flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-16 sm:py-20 px-4 sm:px-8 lg:px-16 xl:px-24 bg-zinc-50 dark:bg-zinc-900 overflow-hidden">
+    <section className="hero-section relative flex flex-col-reverse lg:flex-row items-center justify-between gap-8 py-12 sm:py-16 bg-zinc-50 dark:bg-zinc-900 overflow-hidden">
+      <div className="container flex flex-col-reverse lg:flex-row items-center justify-between gap-6">
       {/* Decorative elements */}
       <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-screen opacity-20 blur-3xl" aria-hidden="true"></div>
       <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-200 dark:bg-blue-800 rounded-full mix-blend-multiply dark:mix-blend-screen opacity-20 blur-3xl" aria-hidden="true"></div>
 
       {/* Text Content */}
-      <motion.div
+  <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{
@@ -25,11 +26,11 @@ export default function Hero() {
           damping: 20,
           duration: 0.6,
         }}
-        className="text-center lg:text-left max-w-2xl relative z-10"
+  className="text-center lg:text-left max-w-2xl relative z-10 motion-layer"
       >
         <motion.h1
           id="hero-heading"
-          className="text-5xl font-extrabold text-zinc-900 dark:text-white mb-2"
+          className="text-5xl font-extrabold text-zinc-900 dark:text-white mb-2 motion-layer"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -38,7 +39,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.h2
-          className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-6"
+          className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-6 motion-layer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -47,7 +48,7 @@ export default function Hero() {
         </motion.h2>
 
         <motion.p
-          className="text-base sm:text-lg lg:text-xl text-zinc-700 dark:text-zinc-300 leading-relaxed mb-8"
+          className="text-base sm:text-lg lg:text-xl text-zinc-700 dark:text-zinc-300 leading-relaxed mb-8 motion-layer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -67,17 +68,14 @@ export default function Hero() {
 
         {/* Action Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+          className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start motion-layer"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           role="group"
           aria-label="Acciones principales"
         >
-          <Button
-            asChild
-            className="gap-2 bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-4 focus-visible:ring-blue-400"
-          >
+          <Button asChild className="btn-elevated">
             <a
               href="/docs/CV_Jorge_Garcia.pdf"
               download="CV_Jorge_Garcia.pdf"
@@ -91,7 +89,7 @@ export default function Hero() {
           <Button
             asChild
             variant="outline"
-            className="gap-2 text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-zinc-900 transition-all duration-300 hover:scale-[1.03] active:scale-95 focus-visible:ring-4 focus-visible:ring-blue-400"
+            className="gap-2 text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-zinc-900 transition-all duration-300 active:scale-95 focus-visible:ring-4 focus-visible:ring-blue-400"
           >
             <a
               href="mailto:garciatorresjorgeivan10@gmail.com"
@@ -115,7 +113,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* 3D Flip Card mejorada */}
+  {/* 3D Flip Card mejorada */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -126,7 +124,7 @@ export default function Hero() {
           duration: 0.6,
           delay: 0.2,
         }}
-        className="w-64 h-96 perspective relative z-10"
+  className="w-48 sm:w-56 h-72 sm:h-84 perspective relative z-10 motion-layer strong-border"
         role="img"
         aria-label="Tarjeta interactiva con foto profesional y certificación"
       >
@@ -146,9 +144,9 @@ export default function Hero() {
           }
         >
           {/* Front Side */}
-          <div className="absolute w-full h-full backface-hidden rounded-2xl shadow-lg overflow-hidden border-2 border-blue-200 dark:border-blue-800 transition-all duration-700">
+          <div className="absolute w-full h-full backface-hidden rounded-2xl shadow-xl overflow-hidden border-2 border-blue-200 dark:border-blue-800 transition-all duration-700">
             <Image
-              src="/images/avatar2.png"
+              src="/images/avatar.png"
               alt="Jorge Iván García Torres - Backend Developer"
               width={256}
               height={384}
@@ -157,7 +155,7 @@ export default function Hero() {
           </div>
 
           {/* Back Side */}
-          <div className="absolute w-full h-full backface-hidden bg-white dark:bg-zinc-800 rounded-2xl p-6 flex flex-col justify-between border-2 border-blue-200 dark:border-blue-800 shadow-lg rotate-y-180 transition-all duration-700 opacity-100">
+          <div className="absolute w-full h-full backface-hidden bg-white dark:bg-zinc-800 rounded-2xl p-6 flex flex-col justify-between border-2 border-blue-200 dark:border-blue-800 shadow-xl rotate-y-180 transition-all duration-700 opacity-100">
             <div>
               <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2 flex items-center gap-2">
                 <span role="img" aria-label="Certificado">🎓</span> Spring Boot Certification
@@ -173,11 +171,7 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col gap-3 mt-4">
-              <Button
-                asChild
-                size="sm"
-                className="gap-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors focus-visible:ring-4 focus-visible:ring-blue-400"
-              >
+              <Button asChild size="sm" className="btn-elevated">
                 <a
                   href="/docs/Certificado_Backend.pdf"
                   target="_blank"
@@ -193,7 +187,7 @@ export default function Hero() {
                 asChild
                 variant="outline"
                 size="sm"
-                className="gap-2 text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-zinc-900 transition-colors focus-visible:ring-4 focus-visible:ring-blue-400"
+                className="gap-2 text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-zinc-900 transition-colors active:scale-95 focus-visible:ring-4 focus-visible:ring-blue-400"
               >
                 <a
                   href="/docs/Certificado_Backend.pdf"
@@ -208,6 +202,7 @@ export default function Hero() {
           </div>
         </div>
       </motion.div>
+      </div>
 
       {/* Estilos CSS para el flip card */}
       <style jsx>{`

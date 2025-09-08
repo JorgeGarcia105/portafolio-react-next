@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import Link from "next/link";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navigation } from "@/components/Navigation";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";

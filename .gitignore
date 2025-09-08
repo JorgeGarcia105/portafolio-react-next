@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 * text=auto
+
+
+#Ignore vscode AI rules
+.github\instructions\codacy.instructions.md

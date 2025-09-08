@@ -1,9 +1,13 @@
 "use client";
 
-import * as React from "react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { type ThemeProviderProps } from "next-themes";
+import { ThemeProvider } from "next-themes";
+import type { ReactNode } from "react";
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+export default function SiteThemeProvider({ children }: { children: ReactNode }) {
+  // Use a deterministic server default to avoid hydration mismatches.
+  return (
+    <ThemeProvider attribute="class" enableSystem={false} defaultTheme="light">
+      {children}
+    </ThemeProvider>
+  );
 }

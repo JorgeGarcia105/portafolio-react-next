@@ -8,115 +8,115 @@ const certificates = [
 		title: "Lógica con JS",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/Logica_JS.png",
-		imageRes: "/images/Logica_JS_Datos.png",
+		//imageRes: "/images/Logica_JS_Datos.png",
 	},
 	{
 		title: "Java Web Spring Boot",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/Java_Web.png",
-		imageRes: "/images/Java_Web_Datos.png",
+		//imageRes: "/images/Java_Web_Datos.png",
 	},
 	{
 		title: "Programación G7",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/Principiante_G7.png",
-		imageRes: "/images/Principiante_G7_Datos.png",
+		//imageRes: "/images/Principiante_G7_Datos.png",
 	},
 	{
 		title: "IA con Java",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/IA_Java.png",
-		imageRes: "/images/IA_Java_Datos.png",
+		//imageRes: "/images/IA_Java_Datos.png",
 	},
 	{
 		title: "Java Spring Boot",
 		issuer: "Alura Latam",
 		imageUrl: "/images/SpringBoot3.png",
-		imageRes: "/images/SpringBoot3_Datos.png",
+		//imageRes: "/images/SpringBoot3_Datos.png",
 	},
 	{
 		title: "Java POO",
 		issuer: "Alura Latam",
 		imageUrl: "/images/Java_POO.png",
-		imageRes: "/images/Java_POO_Datos.png",
+		//imageRes: "/images/Java_POO_Datos.png",
 	},
 	{
 		title: "Java & Spring Framework",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/Java_Spring_G7.png",
-		imageRes: "/images/Java_Spring_G7_Datos.png",
+		//imageRes: "/images/Java_Spring_G7_Datos.png",
 	},
 	{
 		title: "Java POO G7",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/Java_POO_G7.png",
-		imageRes: "/images/Java_POO_G7_Datos.png",
+		//imageRes: "/images/Java_POO_G7_Datos.png",
 	},
 	{
 		title: "Agilidad y Emprendimiento",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/Agilidad_Emprende.png",
-		imageRes: "/images/Agilidad_Emprende_Datos.png",
+		//imageRes: "/images/Agilidad_Emprende_Datos.png",
 	},
 	{
 		title: "Desarrollo Personal",
 		issuer: "Alura Latam - ONE G7",
 		imageUrl: "/images/Desarrollo_Personal.png",
-		imageRes: "/images/Desarrollo_Personal_Datos.png",
+		//imageRes: "/images/Desarrollo_Personal_Datos.png",
 	},
 	{
 		title: "Git & GitHub",
 		issuer: "Alura Latam",
 		imageUrl: "/images/GitHub.png",
-		imageRes: "/images/GitHub_Datos.png",
+		//imageRes: "/images/GitHub_Datos.png",
 	},
 	{
 		title: "ChatGPT Productividad",
 		issuer: "Alura Latam",
 		imageUrl: "/images/ChatGPT.png",
-		imageRes: "/images/ChatGPT_Datos.png",
+		//imageRes: "/images/ChatGPT_Datos.png",
 	},
 	{
 		title: "Challenge Encriptador",
 		issuer: "Alura Latam",
 		imageUrl: "/images/Encriptador.png",
-		imageRes: "/images/Encriptador_Datos.png",
+		//imageRes: "/images/Encriptador_Datos.png",
 	},
 	{
 		title: "Challenge Literalura",
 		issuer: "Alura Latam",
 		imageUrl: "/images/Literalura.png",
-		imageRes: "/images/Literalura_Datos.png",
+		//imageRes: "/images/Literalura_Datos.png",
 	},
 	{
 		title: "Challenge Foro Hub",
 		issuer: "Alura Latam",
 		imageUrl: "/images/ForoHub.png",
-		imageRes: "/images/ForoHub_Datos.png",
+		//imageRes: "/images/ForoHub_Datos.png",
 	},
 	{
 		title: "Challenge Conversor",
 		issuer: "Alura Latam",
 		imageUrl: "/images/ConversorMoneda.png",
-		imageRes: "/images/Conversor_Datos.png",
+		//imageRes: "/images/Conversor_Datos.png",
 	},
 	{
 		title: "IA Generativa - ONE",
 		issuer: "Alura Latam - ONE",
 		imageUrl: "/images/IA_Generativa.png",
-		imageRes: "/images/IA_Generativa_Datos.png",
+		//imageRes: "/images/IA_Generativa_Datos.png",
 	},
 	{
 		title: "Oracle Cloud Infrastructure - ONE",
 		issuer: "Alura Latam - ONE",
 		imageUrl: "/images/Oracle_Cloud.png",
-		imageRes: "/images/Oracle_Cloud_Datos.png",
+		//imageRes: "/images/Oracle_Cloud_Datos.png",
 	},
 	{
 		title: "SQL con MySQL Server - ONE",
 		issuer: "Alura Latam - ONE",
 		imageUrl: "/images/SQL_MySQL.png",
-		imageRes: "/images/SQL_MySQL_Datos.png",
+		//imageRes: "/images/SQL_MySQL_Datos.png",
 	},
 	/*{
 	title: "PLAN DE ESTUDIO ONE - Alumni",
@@ -176,7 +176,7 @@ export default function Certificates() {
 							<div className="absolute w-full h-full rotate-y-180 backface-hidden flex flex-col rounded-2xl bg-white dark:bg-zinc-800">
 								<div className="relative flex-1 bg-zinc-100 dark:bg-zinc-700 flex items-center justify-center">
 									<Image
-										src={cert.imageRes || cert.imageUrl}
+										src={cert.imageUrl}
 										alt={`Detalles del certificado: ${cert.title}`}
 										fill
 										className="object-contain p-4"

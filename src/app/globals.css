@@ -46,6 +46,8 @@
   /* --- Typography --- */
   --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --font-heading: var(--font-system);
+  --text-max-width: 70ch;
 
   /* --- Spacing --- */
   --spacing-xs: 0.25rem;
@@ -145,13 +147,45 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* Container utility to keep content centered and consistent */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Typography helpers */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+}
+
+.prose {
+  max-width: var(--text-max-width);
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* ==========================================================================
    Card Component
    ========================================================================== */
 .card {
   background: hsl(var(--card));
   color: hsl(var(--card-foreground));
-  border: 1px solid hsl(var(--border));
+  border: 1.5px solid hsl(var(--border) / 0.95);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-small);
   transition: all var(--transition-normal);
@@ -165,7 +199,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
   opacity: 0;
   transition: opacity var(--transition-normal);
@@ -176,6 +210,60 @@ body {
   box-shadow: var(--shadow-large);
   border-color: hsl(var(--primary) / 0.3);
 }
+
+/* Buttons: subtle elevation and consistent focus */
+.btn-elevated {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: calc(var(--radius) / 1.25);
+  padding: 0.6rem 1rem;
+  box-shadow: var(--shadow-small);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.btn-elevated:hover { transform: translateY(-2px); box-shadow: var(--shadow-large); }
+.btn-elevated:focus { outline: none; box-shadow: 0 0 0 4px hsl(var(--ring) / 0.12); }
+
+/* Hero tweaks */
+.hero-section { position: relative; }
+.hero-decorative { pointer-events: none; }
+
+/* Reduce layout thrashing for animated elements: prefer transform/opacity, promote GPU compositing */
+.motion-layer {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: paint;
+}
+
+/* Stronger, professional box border utility */
+.strong-border {
+  border: 1.5px solid hsl(var(--border) / 0.95) !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+  border-radius: var(--radius-md);
+}
+
+/* Print styles for single-page CV export */
+@media print {
+  body { background: white !important; color: #000 !important; }
+  .print\:hidden { display: none !important; }
+  .cv-printable { width: 210mm; /* A4 width */ max-width: 210mm; height: 297mm; padding: 12mm; box-shadow: none !important; margin: 0 auto; font-size: 12px; }
+  .cv-printable * { color: #000 !important; }
+  .cv-printable img { page-break-inside: avoid; max-width: 100%; height: auto; }
+  .cv-section { padding: 0 !important; }
+  header, nav, footer, .no-print { display: none !important; }
+  @page { size: A4 portrait; margin: 10mm; }
+
+  /* Two-column layout for main content - header spans full width */
+  .cv-header { break-after: avoid; }
+  .cv-columns { column-count: 2; column-gap: 16px; -webkit-column-break-inside: avoid; column-fill: balance; }
+  .cv-columns section { break-inside: avoid-column; }
+  .cv-columns h2 { font-size: 12px; }
+  .cv-columns p, .cv-columns ul, .cv-columns li { font-size: 11px; }
+  .cv-printable .rounded-lg { border-radius: 4px !important; }
+}
+
 
 .card:hover::before {
   opacity: 1;

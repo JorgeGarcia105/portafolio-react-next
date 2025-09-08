@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import Link from "next/link";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import SiteThemeProvider from "@/components/ThemeProvider";
 import { Navigation } from "@/components/Navigation";
 import "./globals.css";
 import { TourContextProvider } from "@/components/TourContext";
@@ -76,127 +76,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900 dark:bg-zinc-900 dark:text-white`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+  // Let the ThemeProvider manage theme on the client to avoid hydration mismatches
+  <html lang="es" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        {/* Inline script: set initial theme before React hydration to avoid hydration mismatch */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+              try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.style.colorScheme = 'dark';
+                } else if (theme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.style.colorScheme = 'light';
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.style.colorScheme = 'dark';
+                }
+              } catch (e) { /* ignore */ }
+            })();`,
+          }}
+        />
+        <SiteThemeProvider>
           <TourContextProvider>
-            <ClientLayout>
-              {/* Skip to main content para accesibilidad */}
-              <a
-                href="#main-content"
-                className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              >
-                Skip to main content
-              </a>
-
-              <main id="main-content" className="min-h-screen">
-                {children}
-              </main>
-
-              <footer className="bg-zinc-50 dark:bg-zinc-800 border-t border-zinc-200 dark:border-zinc-700">
-                <div className="max-w-7xl mx-auto px-6 py-12">
-                  <div className="grid md:grid-cols-3 gap-8 mb-8">
-                    {/* Información personal */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
-                        Jorge Iván García Torres
-                      </h3>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-                        Backend Developer especializado en Java y Spring Boot. 
-                        Estudiante de Ingeniería de Sistemas.
-                      </p>
-                      <div className="flex gap-4">
-                        <a
-                          href="https://github.com/JorgeGarcia105"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                          aria-label="GitHub Profile"
-                        >
-                          GitHub
-                        </a>
-                        <a
-                          href="https://www.linkedin.com/in/jorgegarcia105"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                          aria-label="LinkedIn Profile"
-                        >
-                          LinkedIn
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Enlaces rápidos */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
-                        Quick Links
-                      </h3>
-                      <nav className="flex flex-col gap-2" aria-label="Footer navigation">
-                        <Link href="/about" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                          About Me
-                        </Link>
-                        <Link href="/projects" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                          My Projects
-                        </Link>
-                        <Link href="/skills" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                          Technical Skills
-                        </Link>
-                        <Link href="/certificates" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                          Certificates
-                        </Link>
-                        <Link href="/cv" className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition">
-                          CV
-                        </Link>
-                      </nav>
-                    </div>
-
-                    {/* Contacto */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
-                        Get In Touch
-                      </h3>
-                      <div className="flex flex-col gap-2">
-                        <a
-                          href="mailto:garciatorresjorgeivan10@gmail.com"
-                          className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                        >
-                          garciatorresjorgeivan10@gmail.com
-                        </a>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                          📍 Colombia
-                        </p>
-                        <Link
-                          href="/contact"
-                          className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition font-medium"
-                        >
-                          Contact Form →
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Copyright */}
-                  <div className="pt-8 border-t border-zinc-200 dark:border-zinc-700 text-center">
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                      © {new Date().getFullYear()} Jorge Iván García Torres. All rights reserved.
-                    </p>
-                    <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
-                      Built with Next.js, TypeScript & Tailwind CSS
-                    </p>
-                  </div>
-                </div>
-              </footer>
-            </ClientLayout>
+            <ClientLayout>{children}</ClientLayout>
           </TourContextProvider>
-        </ThemeProvider>
+        </SiteThemeProvider>
       </body>
     </html>
   );

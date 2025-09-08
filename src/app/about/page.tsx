@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section 
       id="about"
-      className="about-section py-20 px-6 lg:px-24 bg-zinc-50 dark:bg-zinc-900"
+      className="about-section py-16 px-6 lg:px-20 bg-zinc-50 dark:bg-zinc-900"
       aria-labelledby="about-heading"
     >
       <motion.h2
@@ -31,12 +31,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="flex justify-center"
           >
-            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-200 dark:border-blue-800 shadow-lg">
+            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-blue-200 dark:border-blue-800 shadow-lg">
               <Image
-                src="/images/avatar2.png"
+                src="/images/avatar.png"
                 alt="Jorge García - Desarrollador Backend"
-                width={192}
-                height={192}
+                width={140}
+                height={140}
                 className="object-cover w-full h-full"
                 priority
               />
@@ -104,7 +104,7 @@ export default function About() {
           aria-label="Habilidades principales"
         >
           {/* Habilidad 1 */}
-          <article className="group p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700">
+          <article className="group p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700 strong-border">
             <div className="flex flex-col items-center text-center">
               <FaCode
                 className="text-5xl text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform"
@@ -121,7 +121,7 @@ export default function About() {
           </article>
 
           {/* Habilidad 2 */}
-          <article className="group p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700">
+          <article className="group p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700 strong-border">
             <div className="flex flex-col items-center text-center">
               <FaBrain
                 className="text-5xl text-purple-600 dark:text-purple-400 mb-4 group-hover:scale-110 transition-transform"
@@ -138,7 +138,7 @@ export default function About() {
           </article>
 
           {/* Habilidad 3 */}
-          <article className="group p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700">
+          <article className="group p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700 strong-border">
             <div className="flex flex-col items-center text-center">
               <FaBookOpen
                 className="text-5xl text-green-600 dark:text-green-400 mb-4 group-hover:scale-110 transition-transform"
@@ -155,7 +155,7 @@ export default function About() {
           </article>
 
           {/* Habilidad 4 - Nueva */}
-          <article className="group p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700">
+          <article className="group p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-zinc-200 dark:border-zinc-700 strong-border">
             <div className="flex flex-col items-center text-center">
               <FaGraduationCap
                 className="text-5xl text-orange-600 dark:text-orange-400 mb-4 group-hover:scale-110 transition-transform"
