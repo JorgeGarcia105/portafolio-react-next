@@ -10,7 +10,9 @@ export default function Game() {
     const el = iframeRef.current;
     if (!el) return;
     if (el.requestFullscreen) el.requestFullscreen();
-    else if ((el as any).webkitRequestFullscreen) (el as any).webkitRequestFullscreen();
+    else if ('webkitRequestFullscreen' in el && typeof (el as HTMLIFrameElement & { webkitRequestFullscreen?: () => void }).webkitRequestFullscreen === 'function') {
+      (el as HTMLIFrameElement & { webkitRequestFullscreen?: () => void }).webkitRequestFullscreen!();
+    }
   };
 
   return (
