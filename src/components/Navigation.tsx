@@ -15,6 +15,7 @@ const navigationItems = [
     { name: "Skills", href: "/skills" },
     { name: "Projects", href: "/projects" },
     { name: "Certificates", href: "/certificates" },
+    { name: "Game", href: "/game" },
     { name: "Contact", href: "/contact" },
     { name: "CV", href: "/cv" },
     { name: "Blog", href: "/blog" },
