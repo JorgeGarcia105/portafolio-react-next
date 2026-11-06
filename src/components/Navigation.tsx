@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useTour } from "@reactour/tour";
@@ -89,7 +89,7 @@ export function Navigation() {
                             className="w-9 h-9 p-0"
                             aria-label="Toggle theme"
                         >
-                            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                            <span className="text-yellow-500 dark:text-yellow-300">☀️</span>
                             <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                         </Button>
                     )}

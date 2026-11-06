@@ -1,159 +1,61 @@
 # Portafolio Profesional - Jorge Iván García Torres
 
-Este es el portafolio profesional de Jorge Iván García Torres, desarrollador backend con experiencia en arquitectura de software, optimización de sistemas y soluciones Full Stack. El portafolio está construido con **Next.js 13+**, **Tailwind CSS** y desplegado en **Vercel**.
+Este documento resume el contenido y estructura del portafolio Next.js (`portafolio-react-next`).
 
----
+## Resumen
 
-## ✨ Tecnologías principales
+Portafolio profesional desarrollado con Next.js 15, React, TypeScript y Tailwind CSS, desplegado en Vercel. Incluye secciones de perfil, proyectos, certificados, contacto y CV imprimible. Orientado a la búsqueda de práctica profesional para el periodo 2027-1.
 
-- **Next.js 13+**
-- **React**
-- **Tailwind CSS**
-- **TypeScript**
-- **Vercel**
+## Secciones principales
 
----
+- **Inicio (`/`)**: Presentación, descarga de CV y tarjeta interactiva de certificación Spring Boot.
+- **Sobre mí (`/about`)**: Perfil profesional, experiencia y habilidades principales.
+- **Proyectos (`/projects`)**: 13 proyectos con tarjetas, tecnologías y enlaces a GitHub.
+- **Certificados (`/certificates`)**: Tarjetas tipo "flip" con cada certificado (Alura Latam, ONE).
+- **Contacto (`/contact`)**: Formulario y redes sociales.
+- **CV (`/cv`)**: Currículum vitae completo e imprimible.
+- **Habilidades (`/skills`)**: Detalle del stack tecnológico.
 
-## 📌 Secciones del Portafolio
+## Datos del autor
 
-- **Perfil**  
-  Información personal y profesional, resumen de experiencia, habilidades y tecnologías.
+- **Nombre:** Jorge Iván García Torres
+- **Estudios:** Ingeniería de Sistemas y Computación — Universidad de Caldas (9°-10° semestre, faltan 5 materias, graduación esperada 2027-2)
+- **Email:** garciatorresjorgeivan10@gmail.com
+- **Teléfono:** +57 322 408 0309
+- **Ciudad:** Manizales, Caldas, Colombia
+- **GitHub:** https://github.com/JorgeGarcia105
+- **LinkedIn:** https://linkedin.com/in/JorgeGarcia105
+- **Portafolio (GitHub Pages):** https://jorgegarcia105.github.io/Portafolio/
 
-- **Certificaciones**  
-  Lista de certificaciones obtenidas en Alura Latam y Oracle Next Education.
+## Comandos útiles
 
-- **Proyectos**  
-  Galería de proyectos destacados con detalles técnicos, tecnologías usadas y enlaces al código o despliegue.
+```bash
+# Instalar dependencias
+npm install
 
----
+# Servidor de desarrollo
+npm run dev
 
-## 🧾 Certificaciones destacadas
+# Build de producción
+npm run build
 
-### ✅ Backend Specialist - Alura Latam - ONE  
-Formación especializada en desarrollo backend utilizando Java y Spring Boot.
+# Lint
+npm run lint
 
-### ✅ Plan de Estudio ONE - ALUMNI
-
-Incluye 15 cursos completos:
-
-- **SQL con MySQL Server de Oracle - ONE** (7 cursos)
-- **Oracle Cloud Infrastructure - ONE** (2 cursos)
-- **IA Generativa - ONE** (6 cursos)
-
-### Otras certificaciones:
-
-- Lógica de Programación con JavaScript
-- Java Orientado a Objetos
-- HTML y CSS: construyendo páginas web
-- Git y GitHub
-- Inteligencia Artificial con Java
-- Emprendimiento y Agilidad
-- Desarrollo Personal
-
----
-
-## 🧪 Proyectos destacados
-
-- **Foro Hub**  
-  Plataforma de discusión y publicación de temas con autenticación, comentarios y panel de administración.
-
-- **LiterAlura**  
-  Catálogo interactivo de libros con búsqueda, filtro por categorías y almacenamiento persistente.
-
-- **Digital Funeraria**  
-  Sistema universitario para gestión de servicios funerarios.
-
-- **Solucionador de Laberintos**  
-  Aplicación de escritorio con solución visual de laberintos usando algoritmos de búsqueda.
-
-- **Sistema de Gestión de Archivos**  
-  Proyecto académico para almacenamiento, búsqueda y recuperación de archivos digitalizados.
-
----
-
-## 🚀 Despliegue
-
-El portafolio está desplegado en Vercel:  
-[https://tu-nombre.vercel.app](https://tu-nombre.vercel.app)
-
----
-
-## 📂 Organización del código
-
-```
-src/
-  app/                # Páginas y rutas principales (Next.js App Router)
-    about/
-    blog/
-    certificates/
-    contact/
-    cv/
-    projects/
-    skills/
-    ...
-  components/         # Componentes reutilizables (Navigation, TourWrapper, etc.)
-  lib/                # Utilidades y funciones auxiliares
-public/               # Imágenes, íconos y archivos estáticos
+# Verificar tipos
+npx tsc --noEmit
 ```
 
----
+## Archivos relevantes
 
-## 🧭 Guía interactiva
-
-- El portafolio incluye una **guía interactiva** (Tour) para facilitar la navegación y destacar las secciones principales.
-- El tour solo se activa al hacer clic en el botón **"Interactive Guide"** en la barra de navegación.
-- El color y estilo del tour se adapta automáticamente al modo claro/oscuro.
-- Puedes cerrar la guía en cualquier momento con la "X".
-- El tour nunca se abre automáticamente: solo lo activa el usuario.
-
----
-
-## 🌗 Tema claro/oscuro
-
-- El portafolio soporta tema claro y oscuro.
-- Puedes alternar el tema desde el botón de la barra de navegación.
-- El tema se recuerda entre sesiones.
-- El color de la guía interactiva también se adapta al tema.
-
----
-
-## 🛠️ Instalación y uso local
-
-1. **Clona el repositorio:**
-
-   ```bash
-   git clone https://github.com/tuusuario/portafolio-jorge-garcia.git
-   cd portafolio-jorge-garcia
-   ```
-
-2. **Instala las dependencias:**
-
-   ```bash
-   npm install
-   ```
-
-3. **Inicia el servidor de desarrollo:**
-
-   ```bash
-   npm run dev
-   ```
-
-4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
-
----
-
-## 🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas!  
-Por favor, abre un issue o pull request para sugerencias, mejoras o correcciones.
-
----
-
-## 📄 Licencia
-
-MIT
-
----
-
-**Desarrollado por Jorge Iván García Torres**
-
+- `src/app/page.tsx` — Página de inicio
+- `src/app/about/page.tsx` — Sobre mí
+- `src/app/projects/page.tsx` — Proyectos
+- `src/app/certificates/page.tsx` — Certificados
+- `src/app/contact/page.tsx` — Contacto
+- `src/app/cv/page.tsx` — CV imprimible
+- `src/app/skills/page.tsx` — Habilidades
+- `src/lib/content.ts` — Datos de proyectos y posts
+- `src/components/ProjectCard.tsx` — Tarjeta de proyecto
+- `src/components/Hero.tsx` — Hero de inicio
+- `public/docs/CV_Jorge_Garcia.pdf` — CV para descarga

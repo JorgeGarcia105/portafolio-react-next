@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Youtube, Facebook, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Facebook, Mail } from "lucide-react";
 
 // Redes sociales en array para fácil mantenimiento
 const socialLinks = [
@@ -26,13 +26,6 @@ const socialLinks = [
 		icon: Twitter,
 		color:
 			"text-sky-500 border-sky-500 hover:bg-sky-500 hover:text-white",
-	},
-	{
-		href: "https://www.youtube.com/@jgarcia105",
-		label: "YouTube",
-		icon: Youtube,
-		color:
-			"text-red-600 border-red-600 hover:bg-red-600 hover:text-white",
 	},
 	{
 		href: "https://www.facebook.com/garciatorresjorgeivan10",

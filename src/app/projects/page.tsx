@@ -12,102 +12,124 @@ type Project = {
 	technologies: string[];
 };
 
-// Imágenes libres de la web para cada proyecto
+// Proyectos reales de GitHub del estudiante
 const projects: Project[] = [
+	{
+		title: "Foro Hub",
+		description:
+			"API REST para gestión de foros en línea con operaciones CRUD, autenticación JWT, validaciones de negocio y persistencia en PostgreSQL usando Spring Data JPA.",
+		url: "https://github.com/JorgeGarcia105/ForoHub",
+		imageUrl:
+			"https://images.unsplash.com/photo-1547658719-da2b511fd91b?auto=format&fit=crop&w=600&q=80",
+		technologies: ["Java", "Spring Boot", "PostgreSQL", "JWT", "Spring Data JPA"],
+	},
 	{
 		title: "LiterAlura",
 		description:
-			"A book recommendation app that helps users discover and track their favorite books.",
-		url: "https://example.com/literalura",
+			"Catálogo de libros interactivo en Java que consume la API externa Gutendex, permite consultas y filtros, y almacena los datos en PostgreSQL.",
+		url: "https://github.com/JorgeGarcia105/LiterAlura",
 		imageUrl:
-			"https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80", // Unsplash: books
-		technologies: ["Java", "Spring Boot", "MySQL"],
+			"https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80",
+		technologies: ["Java", "Spring Boot", "PostgreSQL", "API Gutendex", "JSON"],
 	},
 	{
-		title: "Labyrinth Solver",
+		title: "GestionHorario",
 		description:
-			"A Python-based maze solver that uses algorithms like DFS and BFS to find the shortest path.",
-		url: "https://example.com/labyrinth-solver",
+			"Generador automático de horarios académicos sin conflictos de clases. Permite definir opciones semanales por materia y genera combinaciones válidas dentro de un rango de créditos, con reglas de exclusión entre materias.",
+		url: "https://github.com/JorgeGarcia105/GestionHorario",
 		imageUrl:
-			"https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80", // Unsplash: aerial maze, diferente y clara
-		technologies: ["Python", "Graph Theory", "Algorithms"],
+			"https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
+		technologies: ["Python", "Flask", "SQLite", "Backtracking", "Algoritmos"],
 	},
 	{
-		title: "Digital Funeral Platform",
+		title: "Complexity-Analyzer",
 		description:
-			"A platform designed to modernize and optimize the management of funeral services, integrating all customer support operations and communication with users.",
-		url: "https://github.com/JorgeGarcia105/Funeraria.git",
+			"Analizador automático de complejidad algorítmica con razonamiento detallado, trazas de ejecución y técnicas avanzadas: Teorema Maestro, Sustitución y Árboles de Recursión.",
+		url: "https://github.com/JorgeGarcia105/Complexity-Analyzer",
 		imageUrl:
-			"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", // Unsplash: abstract
-		technologies: [
-			"LoopBack 4",
-			"MongoDB",
-			"Oracle",
-			"Angular 17",
-			"Messaging and Security",
-		],
+			"https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+		technologies: ["Python", "Análisis de Complejidad", "Algoritmos", "Teorema Maestro"],
 	},
 	{
-		title: "Maze Solver with Python Visualization",
+		title: "Simulador-Computador",
 		description:
-			"A Python program that uses recursive algorithms to solve mazes loaded from a CSV file. It visualizes the maze and the paths found using matplotlib and colorama.",
-		url: "https://github.com/JorgeGarcia105/Laberinto",
+			"Simulador interactivo de arquitectura de computador: CPU, RAM, ROM, Buses, Entrada/Salida y Disco. Construido con React para explorar conceptos fundamentales de la informática.",
+		url: "https://github.com/JorgeGarcia105/Simulador-Computador",
 		imageUrl:
-			"https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=600&q=80", // Unsplash: data visualization
-		technologies: ["Python", "matplotlib", "colorama", "CSV files"],
+			"https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+		technologies: ["JavaScript", "React", "Arquitectura de Computadoras"],
 	},
 	{
-		title: "Tic Tac Toe with Move Evaluation in Python",
+		title: "Conversor de Moneda",
 		description:
-			"Implementation of a Tic Tac Toe game using Tkinter for the GUI and a decision tree to evaluate future moves, considering probabilities of winning, drawing, or losing.",
-		url: "https://github.com/JorgeGarcia105/TicTacToe",
-		imageUrl:
-			"https://upload.wikimedia.org/wikipedia/commons/3/32/Tic_tac_toe.svg", // Wikimedia: tic tac toe
-		technologies: ["Python", "Tkinter", "Decision Trees"],
-	},
-	{
-		title: "Operating System GarciaOS",
-		description:
-			"Creation of an operating system from scratch to explore fundamental computer science concepts. It includes custom booting, user authentication, and file management.",
-		url: "https://github.com/JorgeGarcia105/GarciaOS",
-		imageUrl:
-			"https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80", // Unsplash: code
-		technologies: ["Python", "Assembler", "VirtualBox", "QEMU"],
-	},
-	{
-		title: "File Manager in Python",
-		description:
-			"A collaborative project that allows copying, pasting, cutting, renaming, and deleting files through a GUI developed with Tkinter. It optimizes file management in a hierarchical structure.",
-		url: "https://github.com/JorgeGarcia105/GestorDeArchivos",
-		imageUrl:
-			"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80", // Unsplash: folders
-		technologies: ["Python", "Tkinter", "os", "shutil"],
-	},
-	{
-		title: "Currency Converter",
-		description:
-			"A currency converter project that allows users to convert between different currencies using real-time exchange rates. It is a useful and educational tool for performing currency conversions.",
+			"Aplicación que permite convertir monedas en tiempo real y consultar tasas históricas consumiendo una API externa de tipos de cambio.",
 		url: "https://github.com/JorgeGarcia105/ConversorDeMoneda",
 		imageUrl:
-			"https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=600&q=80", // Unsplash: currency exchange
-		technologies: ["Java", "Gson", "HttpClient"],
+			"https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=600&q=80",
+		technologies: ["Java", "API ExchangeRate", "HttpClient", "Gson"],
 	},
 	{
-		title: "AI-powered Task Management Platform",
+		title: "Laberinto",
 		description:
-			"I developed a fullstack web application for intelligent management of academic and extracurricular tasks, with automatic prioritization through an AI microservice.\n\nModern frontend in React + Material UI, with filters, custom colors, CSV export, and integrated chatbot.\nBackend in Node.js/Express with REST API and MongoDB connection.\nAI microservice in Python (FastAPI) for advanced priority logic.\nFeatures: CRUD for tasks, extracurricular activities, notifications, filters, dynamic ordering, data export, and custom chatbot.\nProject is well-documented, modular, and ready for production/portfolio.",
-		url: "https://github.com/JorgeGarcia105/gestion-tareas-ia",
+			"Programa en Python que resuelve laberintos cargados desde un archivo CSV utilizando algoritmos de búsqueda A* y BFS, con visualización de las rutas encontradas usando matplotlib y colorama.",
+		url: "https://github.com/JorgeGarcia105/Laberinto",
 		imageUrl:
-			"https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80", // Unsplash: tecnología/IA
-		technologies: [
-			"React",
-			"Node.js",
-			"FastAPI",
-			"MongoDB",
-			"Material UI",
-			"Python",
-			"Express",
-		],
+			"https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+		technologies: ["Python", "Pygame", "A*", "BFS", "matplotlib", "colorama"],
+	},
+	{
+		title: "ms-seguridad-ventas-2024",
+		description:
+			"Microservicio para la seguridad del servicio de ventas, implementando autenticación y autorización para proteger los endpoints del negocio.",
+		url: "https://github.com/JorgeGarcia105/ms-seguridad-ventas-2024",
+		imageUrl:
+			"https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80",
+		technologies: ["TypeScript", "Microservicios", "Seguridad", "Autenticación"],
+	},
+	{
+		title: "FunerariaDigital-ms-seguridad",
+		description:
+			"Creación del microservicio de seguridad de una Funeraria Digital, incluyendo autenticación de dos factores (2FA) y sistema de notificaciones por correo y SMS.",
+		url: "https://github.com/JorgeGarcia105/FunerariaDigital-ms-seguridad",
+		imageUrl:
+			"https://images.unsplash.com/photo-1531297553717-02396e51509c?auto=format&fit=crop&w=600&q=80",
+		technologies: ["TypeScript", "Microservicios", "2FA", "Notificaciones"],
+	},
+	{
+		title: "FunerariaDigital-ms-notificaciones",
+		description:
+			"Microservicio de notificaciones vía email (AWS SES) y mensaje de texto (SNS) para la plataforma de Funeraria Digital.",
+		url: "https://github.com/JorgeGarcia105/FunerariaDigital-ms-notificaciones",
+		imageUrl:
+			"https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80",
+		technologies: ["C#", "AWS SES", "SNS", "Microservicios"],
+	},
+	{
+		title: "backend-ventas-2024",
+		description:
+			"Backend para sistema de ventas con arquitectura de microservicios y lógica de negocios separada.",
+		url: "https://github.com/JorgeGarcia105/backend-ventas-2024",
+		imageUrl:
+			"https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+		technologies: ["TypeScript", "Backend", "Ventas", "Microservicios"],
+	},
+	{
+		title: "ms-logica-negocio-ventas-2024",
+		description:
+			"Microservicio de lógica de negocios para el sistema de ventas, separando la capa de presentación de la capa de reglas de negocio.",
+		url: "https://github.com/JorgeGarcia105/ms-logica-negocio-ventas-2024",
+		imageUrl:
+			"https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80",
+		technologies: ["TypeScript", "Lógica de Negocio", "Microservicios"],
+	},
+	{
+		title: "portafolio-react-next",
+		description:
+			"Portafolio personal desarrollado con React y Next.js 13+, desplegado en Vercel. Muestra perfil profesional, certificaciones, proyectos y experiencia como desarrollador backend.",
+		url: "https://github.com/JorgeGarcia105/portafolio-react-next",
+		imageUrl:
+			"https://images.unsplash.com/photo-1460925895917-afaf65ae8d64?auto=format&fit=crop&w=600&q=80",
+		technologies: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Vercel"],
 	},
 ];
 

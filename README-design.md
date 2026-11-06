@@ -1,64 +1,33 @@
-Design improvements applied (summary)
+Documentación de mejoras de diseño (resumen)
 
-Files changed:
-- src/app/globals.css
-  - Added `.container`, typography helpers, `.btn-elevated` and other utilities.
-- src/components/Header.tsx
-  - Glass-like translucent header, container usage, improved spacing and nav links.
-- src/components/Hero.tsx
-  - Rewrapped with `.container`, improved CTA styling (.btn-elevated), refined flip card size and shadows.
-- src/components/ProjectCard.tsx
-  - Improved card accessibility (tabIndex/role), added small footer action area and adjusted image placeholder.
-- src/app/projects/page.tsx
-  - Updated grid to support 4 columns at xl, container usage, and a small filter button.
+Archivos modificados en esta sesión de actualización (prácticas 2027-1):
 
-How to test locally
+- `README.md` — Documentación principal actualizada con datos reales del autor, proyectos, certificaciones y objetivo profesional.
+- `README2.md` — Resumen del portafolio con datos del autor y comandos útiles.
+- `src/lib/content.ts` — Lista de 13 proyectos reales con URLs de GitHub, tech stacks y descripciones.
+- `src/app/projects/page.tsx` — Proyectos reemplazados por datos reales de GitHub (eliminados placeholders de example.com).
+- `src/app/cv/page.tsx` — CV actualizado: semestre 9°-10°, graduación 2027-2, teléfono, ciudad, experiencia, proyectos y educación reales. Eliminadas referencias ficticias.
+- `src/app/about/page.tsx` — Texto sobre mí actualizado con semestre actual y skills.
+- `public/docs/CV_Jorge_Garcia.pdf` — CV PDF actualizado (generado desde `Practicas/`).
 
-1) Install dependencies (if needed):
+Cómo probar localmente
+
+1) Instalar dependencias:
 
 ```bash
 npm install
 ```
 
-2) Run development server:
+2) Ejecutar servidor de desarrollo:
 
 ```bash
 npm run dev
-# open http://localhost:3000
+# abrir http://localhost:3000
 ```
 
-3) Build to verify types and production compile:
+3) Verificar tipos y build de producción:
 
 ```bash
+npx tsc --noEmit
 npm run build
 ```
-
-Notes on Codacy and CI
-
-- Changes must be analyzed by Codacy CLI as required by the repo MCP instructions. If you run the project on Windows, use WSL or a Linux/macos environment to run the Codacy CLI.
-- If Codacy CLI is not available locally, run the MCP/extension check in VS Code or consult your organization settings for MCP servers.
-
-How to open a PR (recommended)
-
-1) Create a branch:
-
-```bash
-git checkout -b feat/design-updates
-```
-
-2) Commit changes:
-
-```bash
-git add .
-git commit -m "chore: design improvements — header, hero, project grid"
-```
-
-3) Push branch:
-
-```bash
-git push -u origin feat/design-updates
-```
-
-4) Create a PR from GitHub UI comparing `feat/design-updates` -> `main` and include this README-design.md as description.
-
-If you want, I can create the branch and open the PR for you (I will need permission to push). Otherwise, follow the steps above.

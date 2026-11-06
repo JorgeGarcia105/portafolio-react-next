@@ -55,21 +55,27 @@ export default function About() {
               <strong className="text-blue-600 dark:text-blue-400">
                 Jorge Iván García Torres
               </strong>
-              , a passionate Backend Developer and Systems Engineering student from
-              Colombia. I'm always eager to learn and grow in the ever-evolving
-              world of technology.
+              , a Backend Developer and Systems Engineering student at
+              Universidad de Caldas, Colombia. Currently in my final year
+              (9°-10° semester, 5 courses remaining, expected graduation 2027-2),
+              I'm seeking a professional internship for 2027-1 where I can apply
+              my backend and full-stack skills to real-world projects.
             </p>
             <p className="text-lg mb-6 leading-relaxed">
               My expertise lies in building{" "}
               <em className="font-medium">scalable and efficient systems</em> using
               <strong className="text-blue-600 dark:text-blue-400"> Java, Spring Boot, Python</strong>, and
-              cutting-edge databases like MySQL and Oracle.
+              databases like MySQL, Oracle, PostgreSQL, and MongoDB. I have hands-on
+              experience implementing secure APIs, 2FA authentication, notification
+              systems, and optimizing SQL queries (+15% efficiency).
             </p>
             <p className="text-lg leading-relaxed">
               I value{" "}
               <strong className="text-green-600 dark:text-green-400">clean code</strong>,
-              agile methodologies, and continuously improving my craft to create
-              impactful software that solves real-world problems.
+              agile methodologies (Scrum, TDD), and continuously improving my craft
+              to create impactful software that solves real-world problems. I'm also
+              exploring DevOps tools (Docker, Kubernetes, Jenkins, Git) and data
+              analysis with Pandas and Matplotlib.
             </p>
 
             {/* Estadísticas rápidas */}
